@@ -2,12 +2,16 @@ import argparse
 import decimal
 import logging
 
-from decimal import *
+from decimal import Decimal, ROUND_DOWN, ROUND_UP
+
 
 class CLI:
     def __init__(self):
 
         self.args = None
+        self.requirement = None
+        self.tax_rate = None
+        self.tolerance = None
 
         logging.basicConfig(level=logging.INFO)
         self.init_argparse()
